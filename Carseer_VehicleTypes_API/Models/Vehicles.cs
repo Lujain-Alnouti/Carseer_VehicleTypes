@@ -3,10 +3,10 @@ namespace Carseer_VehicleTypes_API.Models
 {
     public class Vehicles
     {
-        public int Count { get; set; }
-        public string Message { get; set; }
-        public string? SearchCriteria { get; set; }
-        public List<Vehicles_Details>? Results { get; set; }
+        public int count { get; set; }
+        public string message { get; set; }
+        public string? searchCriteria { get; set; }
+        public List<Vehicles_Details>? results { get; set; }
     }
 
     public class Vehicles_Details{

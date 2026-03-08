@@ -13,22 +13,23 @@ public class VehiclesController : ControllerBase
         _vehicleService = vehicleService;
     }
 
-    [HttpGet("makes")]
+    [HttpGet("Makes")]
     public async Task<IActionResult> GetMakes()
     {
         CarMake result = new CarMake();
          result = await _vehicleService.GetAllMakes();
 
-        return Ok(result.Results);
+        return Ok(result);
     }
 
      [HttpGet("Vehicles")]
     public async Task<IActionResult> GetVehicles_ByMakeId(int MakeId)
     {
         Vehicles result = new Vehicles();
+        
          result = await _vehicleService.GetAllVehicles_ByMakeId(MakeId);
 
-        return Ok(result.Results);
+        return Ok(result);
     }
     
          [HttpGet("CarModels")]
@@ -37,7 +38,7 @@ public class VehiclesController : ControllerBase
         CarModels result = new CarModels();
          result = await _vehicleService.GetAllModels_ByMakeId(MakeId,Year);
 
-        return Ok(result.Results);
+        return Ok(result);
     }
 }
 

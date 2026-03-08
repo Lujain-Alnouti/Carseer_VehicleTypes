@@ -1,0 +1,97 @@
+<div class="container mt-4">
+
+    <!-- Search Card -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-warning text-white">
+            <h5 class="mb-0">Vehicle Search</h5>
+        </div>
+
+        <div class="card-body">
+            <div class="row g-3 align-items-end">
+
+                <div class="col-lg-5">
+                    <label class="form-label fw-semibold">
+                        <span class="text-danger">*</span> Car Make
+                    </label>
+                    <select class="form-select" [(ngModel)]="selectedMake">
+                        <option value="0" disabled selected>Select Make</option>
+                        <option *ngFor="let make of AllMakes?.results" [value]="make.make_ID">
+                            {{make.make_Name}}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="col-lg-5">
+                    <label class="form-label fw-semibold">Year</label>
+                    <select class="form-select" [(ngModel)]="selectedYear">
+                        <option value="0" disabled selected>Select Year</option>
+                        <option *ngFor="let y of Years" [value]="y">
+                            {{y}}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="col-lg-2 d-grid">
+                    <button class="btn btn-success" (click)="CarModels_Search()">
+                        Search
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Results -->
+    <div *ngIf="CarModels!=null" class="mb-4">
+
+        <div class="mb-3">
+            <h6 class="text-muted">
+                Criteria: <strong>{{CarModels.results[0].make_Name}}</strong> | {{selectedYear}}
+            </h6>
+        </div>
+
+        <div class="card shadow-sm">
+            <div class="card-header bg-light fw-bold">
+                Car Models
+            </div>
+
+            <div class="card-body p-0">
+                <table class="table table-striped table-hover mb-0">
+                  
+                    <tbody>
+                        <tr *ngFor="let model of CarModels?.results">
+                            <td>{{model.model_Name}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Vehicle Types -->
+    <div *ngIf="VehicleTypes!=null">
+
+        <div class="card shadow-sm">
+            <div class="card-header bg-light fw-bold">
+                Vehicle Types
+            </div>
+
+            <div class="card-body p-0">
+                <table class="table table-striped table-hover mb-0">
+                  
+                    <tbody>
+                        <tr *ngFor="let type of VehicleTypes?.results">
+                            <td>{{type.vehicleTypeName}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -10,7 +10,7 @@ namespace Carseer_VehicleTypes_API.Models
     }
 
     public class CarMake_Details{
-        public long Make_ID {get; set;}
-        public string Make_Name {get; set;}
+        public long make_ID {get; set;}
+        public string make_Name {get; set;}
     }
 }
