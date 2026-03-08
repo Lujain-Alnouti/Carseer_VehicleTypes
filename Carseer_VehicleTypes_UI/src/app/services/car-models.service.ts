@@ -9,8 +9,10 @@ import { CarModels_Details } from '../Models/CarModels';
   providedIn: 'root'
 })
 export class CarModelsService {
-baseUrl = "http://localhost:5118/api/Vehicles";
-  constructor(private http:HttpClient) { }
+// baseUrl = "http://localhost:5118/api/Vehicles";
+baseUrl = "https://carseer-vehicletypes.onrender.com/api/Vehicles";
+
+constructor(private http:HttpClient) { }
 
 //get all Company Name 
 GetMakes(){
