@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+
+  api:
+    build: ./Carseer_VehicleTypes_API
+    container_name: carseer-api
+    ports:
+      - "5118:80"
+
+  ui:
+    build: ./Carseer_VehicleTypes_UI
+    container_name: carseer-ui
+    ports:
+      - "4200:80"
+    depends_on:
+      - api
