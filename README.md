@@ -15,4 +15,4 @@ docker compose up --build
 
 deploied on Render
 API : https://carseer-vehicletypes.onrender.com/swagger
-FrontEnd:https://carseer-vehicletypes-1.onrender.com
+FrontEnd:https://carseer-vehicletypes-1.onrender.com/CarModels
