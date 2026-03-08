@@ -12,3 +12,7 @@ From the root directory of the project, execute:
 docker compose up --build
    - This command will build and start both the API and frontend containers
 
+
+deploied on Render
+API : https://carseer-vehicletypes.onrender.com/swagger
+FrontEnd:https://carseer-vehicletypes-1.onrender.com
